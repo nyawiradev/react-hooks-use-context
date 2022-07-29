@@ -1,19 +1,9 @@
 import React from "react";
 
-function DarkModeToggle({ theme, setTheme }) {
-  function handleToggleTheme(e) {
-    setTheme(e.target.checked ? "dark" : "light");
-  }
-  return (
-    <label>
-      Dark Mode
-      <input
-        type="checkbox"
-        checked={theme === "dark"}
-        onChange={handleToggleTheme}
-      />
-    </label>
-  );
+import React from "react";
+
+function ThemedButton({ theme, ...props }) {
+  return <button className={theme} {...props} />;
 }
 
-export default DarkModeToggle
+export default ThemedButton;
